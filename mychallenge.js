@@ -153,3 +153,32 @@ students.push({
 })
 
 console.log(students)
+
+//### 11- Mostrar por consola el nombre de la persona más joven de la clase.
+
+let students_by_age = students.sort((actual, next) => (actual.age < next.age) ? -1 : 1)
+console.log(students_by_age[0].name)
+
+//### 12- Mostrar por consola la edad media de todos los alumnos de la clase.
+
+
+
+
+//### 13- Mostrar por consola la edad media de las chicas de la clase.
+
+
+
+
+//### 14- Añadir nueva nota a los alumnos. Por cada alumno de la clase, 
+//tendremos que calcular una nota de forma aleatoria(número entre 0 y 10) y añadirla a su listado de notas.
+
+
+
+
+
+//### 15- Ordenar el array de alumnos alfabéticamente según su nombre.
+
+
+let allNames = students.sort((actual, next) => (actual.name < next.name) ? -1 : 1)
+    .map(item => item.name);
+console.log(allNames)
