@@ -40,7 +40,7 @@ const students = [{
 
 
 //### 1- Mostrar en formato de tabla todos los alumnos.
-//console.table(students)
+console.table(students)
 
 //### 2- Mostrar por consola la cantidad de alumnos que hay en clase
 
@@ -161,17 +161,44 @@ console.log(students_by_age[0].name)
 
 //### 12- Mostrar por consola la edad media de todos los alumnos de la clase.
 
+let allAges = students
+    .map(item => item.age)
 
+let sum = allAges.reduce((previous, current) => current += previous);
+let avg = sum / allAges.length
 
+console.log(avg)
 
 //### 13- Mostrar por consola la edad media de las chicas de la clase.
 
+let justFemales = []
 
+students.forEach(object => {
+    if (object.gender === 'female') {
+        justFemales.push(object)
+    }
+})
+
+let todas_edades = justFemales
+    .map(item => item.age)
+
+let total_amount = todas_edades.reduce((previous, current) => current += previous);
+let media_edades = total_amount / todas_edades.length
+
+console.log(media_edades)
 
 
 //### 14- Añadir nueva nota a los alumnos. Por cada alumno de la clase, 
 //tendremos que calcular una nota de forma aleatoria(número entre 0 y 10) y añadirla a su listado de notas.
 
+students.forEach(object => {
+    let newScore = calculateRandomNumber(0, 10)
+    let notas = object.examScores;
+    notas.push(newScore);
+
+})
+
+console.log(students)
 
 
 
@@ -179,6 +206,6 @@ console.log(students_by_age[0].name)
 //### 15- Ordenar el array de alumnos alfabéticamente según su nombre.
 
 
-let allNames = students.sort((actual, next) => (actual.name < next.name) ? -1 : 1)
+const allNames15 = students.sort((actual, next) => (actual.name < next.name) ? -1 : 1)
     .map(item => item.name);
-console.log(allNames)
+console.log(allNames15)
